@@ -34,7 +34,7 @@ int ft_atoi(const char *str)
 
 /*int main()
 {
-	char *str = " --+-+-+-+-+1234ab567";
+	char *str = " --+-+-+-+-+1536mm5434";
 	ft_atoi(str);
 	printf("%d\n", ft_atoi(str));
 }*/
