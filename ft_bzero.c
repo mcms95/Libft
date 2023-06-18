@@ -13,7 +13,7 @@ void ft_bzero(void *s, size_t n)
     }
 }
 
-int main()
+/*int main()
 {
     char s[] = "Nuno";
     size_t n = 3;
@@ -25,4 +25,4 @@ int main()
     printf("\n");
 
     return 0;
-}
+}*/
