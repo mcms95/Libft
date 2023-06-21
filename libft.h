@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <string.h>
 
 //CHAR FUNCTIONS
 int ft_isalpha(int c);
