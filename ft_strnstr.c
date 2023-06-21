@@ -1,5 +1,4 @@
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char *ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
@@ -14,7 +13,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n)
     
     while(haystack[i] && i <= n - needle_len)
     {
-        if(strncmp(&haystack[i], needle, needle_len) == 0)
+        if(ft_strncmp(&haystack[i], needle, needle_len) == 0)
         {
             return (char *)&haystack[i]; 
         }
@@ -24,7 +23,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n)
     return NULL;  
 }
 
-int main()
+/*int main()
 {
     const char s1[] = "Nuno Miguel Silva";
     const char s2[] = " ";
@@ -32,4 +31,4 @@ int main()
 
     printf("%s\n", ft_strnstr(s1,s2,n));
     return 0;
-}
+}*/

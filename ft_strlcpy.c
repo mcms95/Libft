@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stddef.h>
-#include <string.h>
+#include "libft.h"
 
 size_t strlcpy(char *dest, const char *src, size_t size)
 {

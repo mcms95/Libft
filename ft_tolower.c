@@ -1,4 +1,6 @@
-void    ft_toupper(char *str)
+#include "libft.h"
+
+void    ft_tolower(char *str)
 {
     int i;
     i = 0;

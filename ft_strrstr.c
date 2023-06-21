@@ -8,12 +8,10 @@ char *ft_strrchr(const char *s, int c)
     {
         i++;
     }
-    while(i > 0)
+    while (i >= 0)
     {
         if(s[i] == c)
-        {
-            return(char *)&s[i];
-        }
+            return (char *)(s +i);
         i--;
     }
     return NULL;
@@ -21,9 +19,7 @@ char *ft_strrchr(const char *s, int c)
 
 /*int main()
 {
-    char str[] = "Nuno Silva";
-    char c = ' ';
-
-    printf("%s\n", strrchr( str, c));
-    printf("%s\n", ft_strrchr( str, c));
+    char s[] = "Nuno Silva";
+    int c = 'S';
+    printf("%s\n", ft_strrchr(s,c));
 }*/

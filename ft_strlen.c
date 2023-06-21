@@ -1,4 +1,6 @@
-int ft_strlen(char *str)
+#include "libft.h"
+
+size_t ft_strlen(const char *str)
 {
     int i;
     i = 0;
@@ -7,4 +9,10 @@ int ft_strlen(char *str)
         i++;
     }
     return i;
+}
+
+int main()
+{
+    char *s= "nuno";
+    printf("%d\n", ft_strlen(s));
 }

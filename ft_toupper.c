@@ -1,3 +1,5 @@
+#include "libft.h"
+
 void    ft_toupper(char *str)
 {
     int i;

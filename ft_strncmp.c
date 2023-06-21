@@ -1,5 +1,4 @@
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -16,7 +15,7 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
     return result;
 }
 
-int main()
+/*int main()
 {
     char s1[] = "Nuno";
     char s2[] = "NunO";
@@ -24,6 +23,4 @@ int main()
 
     int comparison = ft_strncmp(s1 ,s2 ,n);
     printf("%d\n", comparison);
-
-
-}
+}*/
