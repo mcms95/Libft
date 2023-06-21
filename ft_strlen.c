@@ -11,8 +11,8 @@ size_t ft_strlen(const char *str)
     return i;
 }
 
-int main()
+/*int main()
 {
     char *s= "nuno";
-    printf("%d\n", ft_strlen(s));
-}
+    printf("%ld\n", ft_strlen(s));
+}*/
