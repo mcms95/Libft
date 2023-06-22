@@ -33,7 +33,7 @@ char *ft_itoa(int n)
         return NULL;
     if (n == 0)
         str[0] = '0';
-    else if ( n < 0)
+    else if (n < 0)
     {
         str[0] = '-';
         n = -n;
@@ -46,6 +46,7 @@ char *ft_itoa(int n)
     }
     return str;
 }
+
 
 /*int main()
 {

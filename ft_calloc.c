@@ -3,16 +3,16 @@
 void *ft_calloc(size_t nmemb, size_t size)
 {
     size_t total = nmemb * size;
-
     void *ptr = malloc(total);
     
-    if(!ptr)
+    if (!ptr)
         return NULL;
     
-    memset(ptr, 0, total);
+    ft_memset(ptr, 0, total);
     
     return ptr;
 }
+
 
 /*int main()
 {

@@ -6,24 +6,24 @@
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     size_t i;
-    char    *str;
+    char *str;
     size_t sub_len;
-    
+
     if (!s)
         return NULL;
-    
+
     size_t s_len = ft_strlen(s);
     if (s_len < start)
         return ft_strdup("");
 
     if (s_len - start < len)
         sub_len = s_len - start;
-    else 
+    else
         sub_len = len;
     str = (char *)malloc((sub_len + 1) * sizeof(char));
     if (!str)
         return NULL;
-    
+
     i = 0;
     while (s[start + i] && i < len)
     {

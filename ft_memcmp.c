@@ -7,7 +7,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 
     result = 0;
     i = 0;
-    while(i < n)
+    while (i < n)
     {
         result = *(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i);
         if (result != 0)
@@ -18,6 +18,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     }
     return result;
 }
+
 
 /*int main()
 {

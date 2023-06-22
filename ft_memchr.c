@@ -6,7 +6,7 @@ void *ft_memchr(void *s, int c, size_t n)
     i = 0;
     while (i < n)
     {
-        if (*(unsigned char *)(s + i) == (unsigned char) c)
+        if (*(unsigned char *)(s + i) == (unsigned char)c)
         {
             return (s + i);
         }
@@ -14,6 +14,7 @@ void *ft_memchr(void *s, int c, size_t n)
     }
     return NULL;
 }
+
 
 /*int main()
 {

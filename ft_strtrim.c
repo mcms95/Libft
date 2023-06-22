@@ -25,19 +25,19 @@ char *ft_strtrim(char const *s1, char const *set)
 
     if (!s1 || !set)
         return NULL;
-    
+
     start = 0;
-    while (s1[start]!= '\0' && check_char(set, s1[start]))
+    while (s1[start] != '\0' && check_char(set, s1[start]))
         start++;
     end = ft_strlen(s1) - 1;
-    while(end > start && check_char(set, s1[end]))
+    while (end > start && check_char(set, s1[end]))
         end--;
-    
+
     new = (char *)malloc((end - start + 2) * sizeof(char));
     if (!new)
         return NULL;
-    
-    while(end >= start)
+
+    while (end >= start)
     {
         new[i++] = s1[start++];
     }

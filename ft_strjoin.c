@@ -4,30 +4,31 @@
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
-    int i;
-    int j;
+    int i = 0;
+    int j = 0;
     size_t total;
     char *str;
-    
+
     if (!s1 || !s2)
         return NULL;
 
-    total = (ft_strlen(s1)) + (ft_strlen(s2));
+    total = ft_strlen(s1) + ft_strlen(s2);
+
     str = (char *)malloc((total + 1) * sizeof(char));
     if (!str)
         return NULL;
 
-    i = 0;
-    while(s1[i] != '\0')
+    while (s1[i] != '\0')
     {
         str[i] = s1[i];
         i++;
     }
-    j = 0;
-    while(s2[j] != '\0')
+
+    while (s2[j] != '\0')
     {
         str[i++] = s2[j++];
     }
+
     str[i] = '\0';
     return str;
 }

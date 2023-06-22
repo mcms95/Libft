@@ -2,25 +2,25 @@
 
 char *ft_strdup(const char *s)
 {
-    int i;
+    int i = 0;
     char *dest;
-    i = 0;
-
-    while(s[i] != '\0')
+    
+    while (s[i] != '\0')
         i++;
     
-    dest = (char *)malloc(i * sizeof(char) + 1);
+    dest = (char *)malloc((i + 1) * sizeof(char));
     
     if (dest == NULL)
-        return 0;
+        return NULL;
 
     i = 0;
-    while(s[i] != '\0')
+    while (s[i] != '\0')
     {
         dest[i] = s[i];
         i++;
     }
     dest[i] = '\0';
+    
     return dest;
 }
 

@@ -1,10 +1,10 @@
 #include "libft.h"
 
-void	ft_putnbr_fd(int nb, int fd)
+void ft_putnbr_fd(int nb, int fd)
 {
-	if (nb >= INT_MIN && nb <= INT_MAX)
+	if (nb > -2147483648 && nb < 2147483647)
 	{
-		if (nb == INT_MIN)
+		if (nb == -2147483648)
 		{
 			ft_putchar_fd('-', fd);
 			ft_putchar_fd('2', fd);

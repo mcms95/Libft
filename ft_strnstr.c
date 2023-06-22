@@ -3,24 +3,22 @@
 char *ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
     size_t i;
-    size_t needle_len = strlen(needle);
+    size_t needle_len = ft_strlen(needle);
     i = 0;
-    
+
     if (n == 0)
         return NULL;
     if (needle_len == 0)
         return ((char *)haystack);
-    
-    while(haystack[i] && i <= n - needle_len)
+
+    while (haystack[i] && i <= n - needle_len)
     {
-        if(ft_strncmp(&haystack[i], needle, needle_len) == 0)
-        {
-            return (char *)&haystack[i]; 
-        }
+        if (ft_strncmp(&haystack[i], needle, needle_len) == 0)
+            return (char *)&haystack[i];
         i++;
-        
-    }  
-    return NULL;  
+    }
+
+    return NULL;
 }
 
 /*int main()
