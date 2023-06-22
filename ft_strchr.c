@@ -3,22 +3,25 @@
 char *ft_strchr(const char *s, int c)
 {
     int i = 0;
-    while (s[i])
+    
+    while (s[i] != '\0')
     {
-        if (s[i] == (char) c)
+        if (((unsigned char *)s)[i] == (unsigned char)c)
         {
             return (char *)&s[i];
         }
         i++;
     }
+    if (s[i] == (unsigned char)c)
+        return ((char *)(s + i));
     return NULL;
 }
 
 /*int main()
 {
     char str[] = "Nuno Silva";
-    char c = ' ';
+    int i = 0;
 
-    printf("%s\n", strchr( str, c));
-    printf("%s\n", ft_strchr( str, c));
+    printf("%s\n", strchr( str, i));
+    printf("%s\n", ft_strchr( str, i));
 }*/

@@ -30,7 +30,7 @@ static void process_substring(char **array, char const *s, int i, int start, int
     int length = i - start;
     array[index] = (char *)malloc((length + 1) * sizeof(char));
     if (!array[index])
-        return;
+        return NULL;
     strncpy(array[index], s + start, length);
     array[index][length] = '\0';
     index++;
@@ -44,6 +44,8 @@ char **ft_split(char const *s, char c)
     int len = strlen(s) + 1;
     int count = count_delimitor(s, c);
     char **array = allocate_array(count);
+    if (!s)
+        return NULL;
 
     while (start < len)
     {

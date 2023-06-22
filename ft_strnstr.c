@@ -4,12 +4,12 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
     size_t i;
     size_t needle_len = ft_strlen(needle);
+    
     i = 0;
-
+    if (!ft_strlen((char *)needle))
+		return ((char *)haystack);
     if (n == 0)
         return NULL;
-    if (needle_len == 0)
-        return ((char *)haystack);
 
     while (haystack[i] && i <= n - needle_len)
     {
@@ -23,10 +23,11 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n)
 
 /*int main()
 {
-    const char s1[] = "Nuno Miguel Silva";
-    const char s2[] = " ";
-    size_t n = 10;
+    const char s1[] = " ";
+    const char s2[] = "";
+    size_t n = 0;
 
     printf("%s\n", ft_strnstr(s1,s2,n));
     return 0;
-}*/
+}
+*/

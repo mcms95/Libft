@@ -16,7 +16,7 @@ int ft_atoi(const char *str)
         i++;
     }    
     
-    while (str[i] == '-' || str[i] == '+')
+    if (str[i] == '-' || str[i] == '+')
     {
         if (str[i] == '-')
         {
@@ -37,7 +37,7 @@ int ft_atoi(const char *str)
 
 /*int main()
 {
-	char *str = " --+-+-+-+-+1536mm5434";
+	char *str = "-++++---1";
 	ft_atoi(str);
 	printf("%d\n", ft_atoi(str));
 }*/

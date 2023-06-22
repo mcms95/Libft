@@ -3,7 +3,7 @@
 // Allocates with malloc and returns a string representing the integer received as an argument. 
 // Negative numbers must be handled.
 
-static int len(int n)
+static int len(long n)
 {
     int i;
     i = 0;
@@ -22,15 +22,18 @@ static int len(int n)
     return i;
 }
 
-
-char *ft_itoa(int n)
+/// passar n para long
+char *ft_itoa(int k)
 {
     char *str;
     int i;
+    long n = k;
     i = len(n);
+    
+
     str = (char *)malloc((i + 1) * sizeof(char));
     if (!str)
-        return NULL;
+        return (NULL);
     if (n == 0)
         str[0] = '0';
     else if (n < 0)
@@ -44,7 +47,7 @@ char *ft_itoa(int n)
         str[--i] = n % 10 + '0';
         n /= 10;
     }
-    return str;
+    return (str);
 }
 
 
