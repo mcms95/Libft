@@ -1,89 +1,105 @@
 #include "libft.h"
 
-static int count_delimitor(char const *s, char c)
+int count_word(char const *s, char c)
 {
-    int count;
-    int i;
-
-    i = 0;
-    count = 0;
+    int i = 0;
+    int count = 0;
     while (s[i] != '\0')
     {
-        if (s[i] == c)
+        while (s[i] == c && s[i] != '\0')
+            i++;
+        if (s[i] != '\0')
             count++;
-        i++;
+        while (s[i] != c && s[i] != '\0')
+            i++;
     }
     return count;
 }
 
-static char **allocate_array(int count)
+char **allocate_main_array(char const *s, char c)
 {
-    char **array = (char **)malloc((count + 2) * sizeof(char *));
-
-
-static void process_substring(char **array, char const *s, int i, int start, int index)
-{
-    int length = i - start;
-    array[index] = (char *)malloc((length + 1) * sizeof(char));
-    if (!array[index])
+    int count = count_word(s, c);
+    char **array = (char **)malloc((count + 1) * sizeof(char *));
+    if (!array)
         return NULL;
-    strncpy(array[index], s + start, length);
-    array[index][length] = '\0';
-    index++;
+    return array;
 }
 
+int word_size(char const *s, char c, int i)
+{
+    while (s[i] && s[i] != c)
+        i++;
+    return i;
+}
+
+static void process_substring(char **array, char const *s, int i, int lenght, int index)
+{
+    array[index] = (char *)malloc((lenght + 1) * sizeof(char));
+    if (!array[index])
+    {
+        while (index > 0)
+            free(array[--index]);
+        free(array);
+        return;
+    }
+    ft_memcpy(array[index], s + i, lenght);
+    array[index][lenght] = '\0';
+}
 char **ft_split(char const *s, char c)
 {
     int i = 0;
-    int start = 0;
     int index = 0;
-    int len = strlen(s) + 1;
-    int count = count_delimitor(s, c);
-    char **array = allocate_array(count);
-    if (!s)
-        return NULL;
-
-    while (start < len)
+    int lenght;
+    int count = count_word(s, c);
+    char **array = allocate_main_array(s, c);
+    
+    while (s[i] != '\0')
     {
-        if (s[i] == c || s[i] == '\0')
+        while (s[i] == c)
+            i++;
+        lenght = 0;
+        if (s[i] != c && s[i] != '\0')
         {
-            int length = i - start;
-            if (length > 0)
-            {
-                process_substring(array, s, i, start, index);
-                index++;
-            }
-            start = i + 1;
+            lenght = word_size(s, c, i) - i;
+            process_substring(array, s, i, lenght, index);
+            index++;
         }
-        i++;
+        i += lenght;
     }
     array[index] = '\0';
     return array;
 }
 
-void free_split(char **split)
+void free_array(char **array)
 {
+    if (array == NULL)
+        return;
     int i = 0;
-
-    while (split[i])
+    while (array[i] != NULL)
     {
-        free(split[i]);
+        free(array[i]);
         i++;
     }
-    free(split);
+    free(array);
 }
+
+
 
 /*int main()
 {
-    char *s = "Nuno Miguel Cardoso Moreira Silva";
+    char s[] = " Nuno Miguel Cardoso   Moreira da Silva      ";
     char c = ' ';
-    char **new = ft_split(s, c);
-
-    if (new)
+    char **result = ft_split(s, c);
+    if (result)
     {
         int i = 0;
-        while (new[i])
+        while (result[i] != NULL)
         {
-            printf("%s\n", new[i]);
+            printf("%s\n", result[i]);
+            free(result[i]);
             i++;
         }
+        free(result);
+    }
+    return 0;
+}*/
