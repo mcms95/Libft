@@ -20,10 +20,6 @@ static char **allocate_array(int count)
 {
     char **array = (char **)malloc((count + 2) * sizeof(char *));
 
-    if (!array)
-        return NULL;
-    return array;
-}
 
 static void process_substring(char **array, char const *s, int i, int start, int index)
 {
@@ -91,6 +87,3 @@ void free_split(char **split)
             printf("%s\n", new[i]);
             i++;
         }
-        free_split(new);
-    }
-}*/
