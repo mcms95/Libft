@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nucardos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/23 19:23:50 by nucardos          #+#    #+#             */
-/*   Updated: 2023/06/23 19:23:53 by nucardos         ###   ########.fr       */
+/*   Created: 2023/06/23 19:24:14 by nucardos          #+#    #+#             */
+/*   Updated: 2023/06/23 19:24:16 by nucardos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_isprint(int c)
 {
-	return (c >= '0' && c <= '9');
+	return (c >= 32 && c <= 126);
 }
-
-/*int main()
-{
-	int c = '8';
-	int result = ft_isdigit(c);
-	printf("%d\n", result);
-
-	return 0;
-}*/

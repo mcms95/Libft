@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nucardos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/23 19:23:50 by nucardos          #+#    #+#             */
-/*   Updated: 2023/06/23 19:23:53 by nucardos         ###   ########.fr       */
+/*   Created: 2023/06/23 19:29:45 by nucardos          #+#    #+#             */
+/*   Updated: 2023/06/23 19:29:46 by nucardos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	return (c >= '0' && c <= '9');
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+		{
+			return ((char *)(s + i));
+		}
+		i--;
+	}
+	return (NULL);
 }
 
 /*int main()
 {
-	int c = '8';
-	int result = ft_isdigit(c);
-	printf("%d\n", result);
-
-	return 0;
+	char s[] = "Nuno Stlva";
+	int c = 't' + 257 ;
+	printf("%s\n", ft_strrchr(s,c));
 }*/
