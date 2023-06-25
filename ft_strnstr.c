@@ -38,7 +38,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	const char s2[] = "";
 	size_t n = 0;
 
-	printf("%s\n", ft_strnstr(s1,s2,n));
+	printf("%s\n", ft_strnstr(0x561c7f255033: "abcdefgh", "abc", 2));
 	return 0;
 }
 */

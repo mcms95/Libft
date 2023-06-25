@@ -97,7 +97,7 @@ char	**ft_split(char const *s, char c)
 
 /*int main()
 {
-	char s[] = " Nuno Miguel Cardoso   Moreira da Silva      ";
+	char s[] = "      split       this for   me  !       ";
 	char c = ' ';
 	char **result = ft_split(s, c);
 	if (result)
@@ -112,4 +112,5 @@ char	**ft_split(char const *s, char c)
 		free(result);
 	}
 	return 0;
-}*/
+}
+*/

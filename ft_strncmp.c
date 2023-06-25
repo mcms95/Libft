@@ -21,21 +21,21 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	while (s1[i] && s2[i] && i < n)
 	{
-		result = s1[i] - s2[i];
+		result = (unsigned char)(s1[i]) - (unsigned char)(s2[i]);
 		if (result != 0)
 			return (result);
 		i++;
 	}
 	if (i < n)
-		result = s1[i] - s2[i];
+		result = (unsigned char)(s1[i]) - (unsigned char)(s2[i]);
 	return (result);
 }
 
 /*int main()
 {
-	char s1[] = "Nuno";
-	char s2[] = "NunO";
-	size_t n = 2;
+	char s1[] = "test/200";
+	char s2[] = "test/0";
+	size_t n = 6;
 
 	int comparison = ft_strncmp(s1 ,s2 ,n);
 	printf("%d\n", comparison);
