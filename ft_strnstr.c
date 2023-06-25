@@ -11,25 +11,40 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
+#include <unistd.h>
+#include <limits.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	size_t	i;
-	size_t	needle_len;
+	size_t	j;
+	size_t	k;
+	char	*hay;
 
-	needle_len = ft_strlen(needle);
-	i = 0;
-	if (!ft_strlen((char *)needle))
-		return ((char *)haystack);
-	if (n == 0)
+	hay = (char *)haystack;
+	if (needle[0] == '\0')
+		return (hay);
+	if (hay[0] == '\0')
 		return (NULL);
-	while (haystack[i] && i <= n - needle_len)
+	i = 0;
+	while (i < n)
 	{
-		if (ft_strncmp(&haystack[i], needle, needle_len) == 0)
-			return ((char *)&haystack[i]);
+		j = 0;
+		k = i;
+		while (hay[k] == needle[j] && k < n)
+		{
+			k++;
+			j++;
+			if (needle[j] == '\0')
+				return (hay + i);
+		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 
 /*int main()
@@ -37,8 +52,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	const char s1[] = " ";
 	const char s2[] = "";
 	size_t n = 0;
-
-	printf("%s\n", ft_strnstr(0x561c7f255033: "abcdefgh", "abc", 2));
+	printf("%s\n", ft_strnstr("abcdefgh", "abc", 2));
 	return 0;
-}
-*/
+}*/

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	count_word(char const *s, char c)
+static int	count_word(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -32,7 +32,7 @@ int	count_word(char const *s, char c)
 	return (count);
 }
 
-char	**allocate_main_array(char const *s, char c)
+static char	**allocate_main_array(char const *s, char c)
 {
 	int		count;
 	char	**array;
@@ -44,7 +44,7 @@ char	**allocate_main_array(char const *s, char c)
 	return (array);
 }
 
-int	word_size(char const *s, char c, int i)
+static int	word_size(char const *s, char c, int i)
 {
 	while (s[i] && s[i] != c)
 		i++;
@@ -57,7 +57,7 @@ static void	process_substring(char **array, char const *s,
 	array[index] = (char *)malloc((lenght + 1) * sizeof(char));
 	if (!array[index])
 	{
-		while (index > 0)
+		while (index >= 0)
 			free(array[--index]);
 		free(array);
 		return ;
@@ -71,13 +71,13 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		index;
 	int		lenght;
-	int		count;
 	char	**array;
 
 	i = 0;
 	index = 0;
-	count = count_word(s, c);
 	array = allocate_main_array(s, c);
+	if (!array)
+		return (NULL);
 	while (s[i] != '\0')
 	{
 		while (s[i] == c)
